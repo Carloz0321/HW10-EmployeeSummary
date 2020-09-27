@@ -1,4 +1,4 @@
-const Employee = require("../JStemps/employee");
+const Employee = require("../JStemps/employee.js");
 
 class Engineer extends Employee {
     constructor(name, id, email, github) {
@@ -13,7 +13,7 @@ class Engineer extends Employee {
     getRole() {
         return "Engineer";
     }
-    
+
 };
 
 module.exports = Engineer;

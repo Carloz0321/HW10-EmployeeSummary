@@ -1,4 +1,4 @@
-const Employee = require("../JStemps/employee")
+const Employee = require("../JStemps/employee.js")
 
 class Intern extends Employee {
     constructor(name, id, email, school) {

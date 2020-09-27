@@ -1,4 +1,4 @@
-const Employee = require("../JStemps/employee");
+const Employee = require("../JStemps/employee.js");
 
 class Manager extends Employee {
     constructor(name, id, email, officeNumber) {
@@ -8,7 +8,7 @@ class Manager extends Employee {
 
     getOfficeNumber() {
         return(this.officeNumber);
-    }
+    };
 
     getRole() {
         return "Manager";

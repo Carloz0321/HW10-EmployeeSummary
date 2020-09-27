@@ -29,13 +29,13 @@ function employeeInformation() {
         } else if (val.name === "Intern") {
             internInformation();
         } else if (val.name === "Show Summary") {
-            generateHTML(outputPath, render(team));
+            generateHTML(outputPath, render(crew));
         };
     });
 };
 
 function managerInformation() {
-    return inquirer.prompt([
+  return inquirer.prompt([
         {
             type: "input",
             message: "What is your Manager's name?",
@@ -57,15 +57,15 @@ function managerInformation() {
             name: "number",
         },
     ]).then(function(answer) {
-        let manager = new Manager(answer.name, answer.id, answer.email. answer.number)
-        team.push(manager);
+        let manager = new Manager(answer.name, answer.id, answer.email, answer.number);
+        crew.push(manager);
 
         employeeInformation()
     })
 };
 
-function engineerInformation() {
-    return inquirer.prompt([
+function engineerinformation() {
+  return inquirer.prompt([
         {
             type: "input",
             message: "What is your engineer's name?",
@@ -87,15 +87,15 @@ function engineerInformation() {
             name: "Github",
         },
     ]).then(function(answer) {
-        let manager = new Engineer(answer.name, answer.id, answer.email. answer.Github)
-        team.push(engineer);
+        let engineer = new Engineer(answer.name, answer.id, answer.email, answer.Github);
+        crew.push(engineer);
 
         employeeInformation()
     })
 };
 
 function internInformation() {
-    return inquirer.prompt([
+  return inquirer.prompt([
         {
             type: "input",
             message: "What is your inter's name?",
@@ -117,15 +117,15 @@ function internInformation() {
             name: "school",
         },
     ]).then(function(answer) {
-        let manager = new Intern(answer.name, answer.id, answer.email. answer.school)
-        team.push(intern);
+        let intern = new Intern(answer.name, answer.id, answer.email, answer.school);
+        crew.push(intern);
 
         employeeInformation()
     })
 };
 
 
-function generateHTML(FileName, data) {
+function generateHTML(fileName, data) {
     fs.writeFile(fileName, data, "utf8", function (err){
         if (err) {
             throw err;
